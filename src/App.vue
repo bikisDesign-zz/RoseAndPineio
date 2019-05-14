@@ -1,12 +1,25 @@
 <template>
   <div id="app">
+    <LeftColumn></LeftColumn>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-view/>
+      <Navigation></Navigation>
     </div>
     <router-view />
   </div>
 </template>
+<script>
+
+import Navigation from './components/Navigation'
+import LeftColumn from "./components/LeftColumn"
+export default {
+  name: 'app',
+  components: {
+    'Navigation': Navigation,
+    'LeftColumn': LeftColumn,
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
